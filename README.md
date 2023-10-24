@@ -41,9 +41,11 @@ Para ejecutar la aplicación, necesitarás:
 
 3. Ejecuta el proyecto del backend para habilitar el servidor.
 
-4. Abre la aplicación frontend en tu navegador web.
+4. Clona el front de la aplicacion ( https://github.com/NixonAmado/Pharmacy-View )
 
-5. Comienza a explorar y utilizar las diferentes funcionalidades del sistema.
+5. Abre el index en tu navegador.
+
+6. Comienza a explorar y utilizar las diferentes funcionalidades del sistema.
 
 ## Contribución 🤝
 
