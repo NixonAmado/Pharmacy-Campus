@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiPharmacy.Controllers;
-[Authorize(Roles = "Gerente , Administrador")]
 
 public class EmployeeController : BaseApiController
 {
@@ -21,8 +20,7 @@ public class EmployeeController : BaseApiController
 
     //Obterner Todos los Empleados
     [HttpGet("List")]
-    [AllowAnonymous]
-    [Authorize(Roles = "Cajero")]
+    
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<IEnumerable<EmployeeDto>>> Get()
@@ -102,7 +100,7 @@ public class EmployeeController : BaseApiController
     }
     
     [HttpGet("Unique/{id}")]
-    [Authorize(Roles = "Cajero")]
+    
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<EmployeeDto>> Get(string id)
@@ -113,7 +111,7 @@ public class EmployeeController : BaseApiController
 
 
     [HttpPost]
-    [Authorize(Roles = "Cajero")]
+    
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<Person>> Post(EmployeeDto employeeDto)
@@ -130,8 +128,6 @@ public class EmployeeController : BaseApiController
     }
 
     [HttpPut("{id}")]
-    [AllowAnonymous]
-    [Authorize(Roles = "Cajero")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<EmployeeDto>> Put([FromBody] EmployeeDto employeeDto)
@@ -148,8 +144,6 @@ public class EmployeeController : BaseApiController
     }
 
     [HttpDelete("{id}")]
-    [AllowAnonymous]
-    [Authorize(Roles = "Cajero")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> Delete(string id)

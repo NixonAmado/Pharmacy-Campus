@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Routing;
 
 namespace ApiPharmacy.Controllers;
-[Authorize(Roles = "Gerente , Administrador")]
 public class PatientController : BaseApiController
 {
     private readonly IUnitOfWork _unitOfWork;
@@ -21,8 +20,8 @@ public class PatientController : BaseApiController
 
     //Obtener todos los Pacientes 
     [HttpGet]
-    [AllowAnonymous]
-    [Authorize(Roles = "Cajero")]
+    
+    
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<IEnumerable<PatientDto>>> Get()
@@ -83,8 +82,8 @@ public class PatientController : BaseApiController
 
 
     [HttpGet("{id}")]
-    [AllowAnonymous]
-    [Authorize(Roles = "Cajero")]
+    
+    
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> Get(int id)
@@ -95,8 +94,8 @@ public class PatientController : BaseApiController
 
 
     [HttpPost]
-    [AllowAnonymous]
-    [Authorize(Roles = "Cajero")]
+    
+    
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<Person>> Post(PatientDto patientDto)
@@ -114,8 +113,8 @@ public class PatientController : BaseApiController
 
 
     [HttpPut("{id}")]
-    [AllowAnonymous]
-    [Authorize(Roles = "Cajero")]
+    
+    
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<PatientDto>> Put([FromBody] PatientDto patientDto)
@@ -132,8 +131,8 @@ public class PatientController : BaseApiController
     }
 
     [HttpDelete("{id}")]
-    [AllowAnonymous]
-    [Authorize(Roles = "Cajero")]
+    
+    
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> Delete(int id)
