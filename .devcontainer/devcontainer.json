@@ -1,0 +1,9 @@
+{
+    "name": "My .NET 7 Project",
+    "image": "mcr.microsoft.com/dotnet/sdk:7.0",
+    "extensions": [
+        "ms-dotnettools.csharp"
+    ],
+    "settings": {
+    }
+}
